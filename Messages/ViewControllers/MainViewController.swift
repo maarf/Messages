@@ -69,7 +69,7 @@ final class MainViewController: NSSplitViewController {
       recipientEmail: "johnyy@example.com",
       receivedAt: Date(timeIntervalSince1970: 1582629000),
       subject: "The latest news",
-      body: "Fresh off the press")
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non interdum justo. Morbi et nibh ut erat pharetra vehicula. Duis vitae nisl a risus mattis porta sit amet ut dolor. Nam finibus bibendum nisl, in euismod eros maximus faucibus. Phasellus erat dui, vehicula at tincidunt in, consequat id leo. Vivamus eleifend, quam id egestas posuere, nulla arcu tempor neque, vitae tincidunt nibh eros vel augue. Mauris venenatis id odio elementum lacinia. Pellentesque vel nulla in nisi venenatis ultrices et sed ipsum. Suspendisse malesuada lorem vel lacus ullamcorper condimentum. Maecenas sit amet efficitur est, vitae venenatis felis. Maecenas lacinia velit dignissim nisi ullamcorper tempor. In nec lobortis justo, vitae dapibus turpis. Vivamus at purus tellus. Quisque ac libero semper, iaculis libero quis, auctor nisl.")
   ]
 }
 

@@ -11,6 +11,13 @@ import Model
 
 final class MessageDetailsController: NSViewController {
 
+  // MARK: - Lifecycle
+
+  override func viewDidLoad() {
+    // Constrain scroll view and its document view widths to equal
+    documentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+  }
+
   // MARK: - State
 
   var message: Message? {
@@ -20,17 +27,20 @@ final class MessageDetailsController: NSViewController {
       recipientNameLabel.stringValue = message.recipientName
       subjectLabel.stringValue = message.subject
       dateLabel.stringValue = dateFormatter.string(from: message.receivedAt)
+      bodyLabel.stringValue = message.body
     }
   }
 
   // MARK: - Subviews
 
+  @IBOutlet var scrollView: NSScrollView!
+  @IBOutlet var documentView: FlippedView!
   @IBOutlet var senderNameLabel: NSTextField!
   @IBOutlet var recipientNameLabel: NSTextField!
   @IBOutlet var subjectLabel: NSTextField!
   @IBOutlet var dateLabel: NSTextField!
   @IBOutlet var avatar: NSImageView!
-  @IBOutlet var textView: NSTextView!
+  @IBOutlet var bodyLabel: NSTextField!
 }
 
 private let dateFormatter: DateFormatter = {
@@ -39,3 +49,9 @@ private let dateFormatter: DateFormatter = {
   formatter.timeStyle = .short
   return formatter
 }()
+
+// This is a simply a flipped NSView so that the scroll view positions it at the
+// top
+final class FlippedView: NSView {
+  override var isFlipped: Bool { true }
+}
