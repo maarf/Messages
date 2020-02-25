@@ -52,7 +52,7 @@ final class MainViewController: NSSplitViewController {
       recipientName: "Johnny",
       recipientEmail: "johnyy@example.com",
       receivedAt: Date(timeIntervalSince1970: 1582558880),
-      subject: "Older test message",
+      subject: "Older test message with a quite long subject",
       body: "Older message body"),
     Message(
       senderName: "Bertrand",
