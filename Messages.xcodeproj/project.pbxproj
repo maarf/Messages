@@ -14,7 +14,35 @@
 		D4B706FE24052D620019BE72 /* MessagesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B706FD24052D620019BE72 /* MessagesListController.swift */; };
 		D4B7070024052DA30019BE72 /* MessageDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B706FF24052DA30019BE72 /* MessageDetailsController.swift */; };
 		D4B7070324052DFF0019BE72 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B7070224052DFF0019BE72 /* MessageCell.swift */; };
+		D4B70710240533A10019BE72 /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = D4B7070E240533A10019BE72 /* Model.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4B70713240533A10019BE72 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B7070C240533A10019BE72 /* Model.framework */; };
+		D4B70714240533A10019BE72 /* Model.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4B7070C240533A10019BE72 /* Model.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D4B7071A240533B00019BE72 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B70719240533B00019BE72 /* Message.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4B70711240533A10019BE72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4B706E124051F440019BE72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4B7070B240533A10019BE72;
+			remoteInfo = Model;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D4B70718240533A10019BE72 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D4B70714240533A10019BE72 /* Model.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D4B706E924051F440019BE72 /* Messages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messages.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,10 +55,22 @@
 		D4B706FD24052D620019BE72 /* MessagesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesListController.swift; sourceTree = "<group>"; };
 		D4B706FF24052DA30019BE72 /* MessageDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailsController.swift; sourceTree = "<group>"; };
 		D4B7070224052DFF0019BE72 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		D4B7070C240533A10019BE72 /* Model.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Model.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4B7070E240533A10019BE72 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		D4B7070F240533A10019BE72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4B70719240533B00019BE72 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D4B706E624051F440019BE72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4B70713240533A10019BE72 /* Model.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4B70709240533A10019BE72 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				D4B706EB24051F440019BE72 /* Messages */,
+				D4B7070D240533A10019BE72 /* Model */,
 				D4B706EA24051F440019BE72 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				D4B706E924051F440019BE72 /* Messages.app */,
+				D4B7070C240533A10019BE72 /* Model.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,7 +130,28 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		D4B7070D240533A10019BE72 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4B70719240533B00019BE72 /* Message.swift */,
+				D4B7070E240533A10019BE72 /* Model.h */,
+				D4B7070F240533A10019BE72 /* Info.plist */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D4B70707240533A10019BE72 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4B70710240533A10019BE72 /* Model.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		D4B706E824051F440019BE72 /* Messages */ = {
@@ -98,15 +161,35 @@
 				D4B706E524051F440019BE72 /* Sources */,
 				D4B706E624051F440019BE72 /* Frameworks */,
 				D4B706E724051F440019BE72 /* Resources */,
+				D4B70718240533A10019BE72 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D4B70712240533A10019BE72 /* PBXTargetDependency */,
 			);
 			name = Messages;
 			productName = Messages;
 			productReference = D4B706E924051F440019BE72 /* Messages.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D4B7070B240533A10019BE72 /* Model */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4B70715240533A10019BE72 /* Build configuration list for PBXNativeTarget "Model" */;
+			buildPhases = (
+				D4B70707240533A10019BE72 /* Headers */,
+				D4B70708240533A10019BE72 /* Sources */,
+				D4B70709240533A10019BE72 /* Frameworks */,
+				D4B7070A240533A10019BE72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Model;
+			productName = Model;
+			productReference = D4B7070C240533A10019BE72 /* Model.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -120,6 +203,10 @@
 				TargetAttributes = {
 					D4B706E824051F440019BE72 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					D4B7070B240533A10019BE72 = {
+						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -137,6 +224,7 @@
 			projectRoot = "";
 			targets = (
 				D4B706E824051F440019BE72 /* Messages */,
+				D4B7070B240533A10019BE72 /* Model */,
 			);
 		};
 /* End PBXProject section */
@@ -148,6 +236,13 @@
 			files = (
 				D4B706F124051F460019BE72 /* Assets.xcassets in Resources */,
 				D4B706F424051F460019BE72 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4B7070A240533A10019BE72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +261,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D4B70708240533A10019BE72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4B7071A240533B00019BE72 /* Message.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4B70712240533A10019BE72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4B7070B240533A10019BE72 /* Model */;
+			targetProxy = D4B70711240533A10019BE72 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D4B706F224051F460019BE72 /* Main.storyboard */ = {
@@ -296,6 +407,7 @@
 		D4B706FA24051F460019BE72 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Messages/Messages.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,6 +426,7 @@
 		D4B706FB24051F460019BE72 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Messages/Messages.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -326,6 +439,61 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.maarf.Messages;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D4B70716240533A10019BE72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Model/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.maarf.Model;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D4B70717240533A10019BE72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Model/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.maarf.Model;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -346,6 +514,15 @@
 			buildConfigurations = (
 				D4B706FA24051F460019BE72 /* Debug */,
 				D4B706FB24051F460019BE72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4B70715240533A10019BE72 /* Build configuration list for PBXNativeTarget "Model" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4B70716240533A10019BE72 /* Debug */,
+				D4B70717240533A10019BE72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
