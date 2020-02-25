@@ -747,13 +747,13 @@
                                     </menu>
                                 </popUpButtonCell>
                             </popUpButton>
-                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ny-4W-9pB">
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="54" horizontalPageScroll="10" verticalLineScroll="54" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ny-4W-9pB">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="573"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="XtZ-H9-01y">
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="573"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="X8E-1m-LD9">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="52" viewBased="YES" id="X8E-1m-LD9">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="573"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="0.0" height="2"/>
@@ -832,7 +832,10 @@
                                                                 <constraint firstItem="QNa-nD-SJ6" firstAttribute="leading" secondItem="Wdn-l7-ETF" secondAttribute="trailing" constant="8" id="sfY-x6-nSv"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="textField" destination="PBi-cT-m45" id="xo2-iL-n3a"/>
+                                                                <outlet property="avatar" destination="Wdn-l7-ETF" id="nyr-rZ-g1t"/>
+                                                                <outlet property="dateLabel" destination="hGp-hL-S3c" id="e7e-Sn-sPy"/>
+                                                                <outlet property="senderNameLabel" destination="PBi-cT-m45" id="ub2-Sc-OM8"/>
+                                                                <outlet property="subjectLabel" destination="QNa-nD-SJ6" id="rYl-HA-boZ"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
@@ -862,6 +865,9 @@
                             <constraint firstAttribute="trailing" secondItem="fA1-dO-m4C" secondAttribute="trailing" priority="240" constant="129" id="xro-MD-8Ub"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="X8E-1m-LD9" id="7cD-KE-Ch8"/>
+                    </connections>
                 </viewController>
                 <customObject id="4YD-xH-a4D" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
