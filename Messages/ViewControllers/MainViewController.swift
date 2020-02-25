@@ -32,7 +32,7 @@ final class MainViewController: NSSplitViewController {
     self.messageDetails = messageDetails
 
     self.messagesList.delegate = self
-    self.messagesList.messages = testMessages
+    self.messagesList.messages = testMessages.sorted(by: .date)
   }
 
   // MARK: Testing
@@ -53,7 +53,23 @@ final class MainViewController: NSSplitViewController {
       recipientEmail: "johnyy@example.com",
       receivedAt: Date(timeIntervalSince1970: 1582558880),
       subject: "Older test message",
-      body: "Older message body")
+      body: "Older message body"),
+    Message(
+      senderName: "Bertrand",
+      senderEmail: "bertrand@example.com",
+      recipientName: "Johnny",
+      recipientEmail: "johnyy@example.com",
+      receivedAt: Date(timeIntervalSince1970: 1582238880),
+      subject: "ASAP as possible",
+      body: "This is important!"),
+    Message(
+      senderName: "Katherin",
+      senderEmail: "kat@example.com",
+      recipientName: "Johnny",
+      recipientEmail: "johnyy@example.com",
+      receivedAt: Date(timeIntervalSince1970: 1582629000),
+      subject: "The latest news",
+      body: "Fresh off the press")
   ]
 }
 
@@ -62,5 +78,23 @@ final class MainViewController: NSSplitViewController {
 extension MainViewController: MessagesListControllerDelegate {
   func didChangeSelection(message: Message?) {
     messageDetails.message = message
+  }
+
+  func didChangeSortOrder(_ sortOrder: SortOrder) {
+    messagesList.messages = testMessages.sorted(by: sortOrder)
+  }
+}
+
+// MARK: - Message sorting by order
+
+extension Array where Element == Message {
+  func sorted(by sortOrder: SortOrder) -> Self {
+    switch sortOrder {
+      case .date:
+        // This is descending date order
+        return sorted { $0.receivedAt > $1.receivedAt }
+      case .senderName:
+        return sorted { $0.senderName < $1.senderName }
+    }
   }
 }

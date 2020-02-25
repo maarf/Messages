@@ -23,18 +23,45 @@ final class MessagesListController: NSViewController {
 
   // MARK: - Subviews
 
+  @IBOutlet var sortingButton: NSPopUpButton!
   @IBOutlet var tableView: NSTableView!
 
   // MARK: - State
 
-  var messages = [Message]()
+  var messages = [Message]() {
+    didSet {
+      tableView.reloadData()
+    }
+  }
 
+  var sortOrder: SortOrder {
+    get {
+      switch sortingButton.indexOfSelectedItem {
+        case 0: return .date
+        case 1: return .senderName
+        default: fatalError("Unknown sort order")
+      }
+    }
+  }
+
+  // MARK: - Actions
+
+  @IBAction func selectedSortOrder(_ sender: Any?) {
+    delegate?.didChangeSortOrder(sortOrder)
+  }
 }
 
 // MARK: - Delegate protocol
 
 protocol MessagesListControllerDelegate: class {
   func didChangeSelection(message: Message?)
+  func didChangeSortOrder(_ sortOrder: SortOrder)
+}
+
+// MARK: - Auxilary types
+
+enum SortOrder {
+  case date, senderName
 }
 
 // MARK: - Table view delegate and data source

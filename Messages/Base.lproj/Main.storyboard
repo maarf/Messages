@@ -746,6 +746,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="selectedSortOrder:" target="Erl-BC-1D9" id="DtW-1t-NHW"/>
+                                </connections>
                             </popUpButton>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="54" horizontalPageScroll="10" verticalLineScroll="54" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ny-4W-9pB">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="573"/>
@@ -866,6 +869,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="sortingButton" destination="fA1-dO-m4C" id="JeI-L8-5Um"/>
                         <outlet property="tableView" destination="X8E-1m-LD9" id="7cD-KE-Ch8"/>
                     </connections>
                 </viewController>
