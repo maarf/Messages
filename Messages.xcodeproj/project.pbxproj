@@ -8,19 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		D4B706ED24051F440019BE72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B706EC24051F440019BE72 /* AppDelegate.swift */; };
-		D4B706EF24051F440019BE72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B706EE24051F440019BE72 /* ViewController.swift */; };
+		D4B706EF24051F440019BE72 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B706EE24051F440019BE72 /* MainViewController.swift */; };
 		D4B706F124051F460019BE72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B706F024051F460019BE72 /* Assets.xcassets */; };
 		D4B706F424051F460019BE72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4B706F224051F460019BE72 /* Main.storyboard */; };
+		D4B706FE24052D620019BE72 /* MessagesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B706FD24052D620019BE72 /* MessagesListController.swift */; };
+		D4B7070024052DA30019BE72 /* MessageDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B706FF24052DA30019BE72 /* MessageDetailsController.swift */; };
+		D4B7070324052DFF0019BE72 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B7070224052DFF0019BE72 /* MessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D4B706E924051F440019BE72 /* Messages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B706EC24051F440019BE72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D4B706EE24051F440019BE72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D4B706EE24051F440019BE72 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D4B706F024051F460019BE72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4B706F324051F460019BE72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4B706F524051F460019BE72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4B706F624051F460019BE72 /* Messages.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Messages.entitlements; sourceTree = "<group>"; };
+		D4B706FD24052D620019BE72 /* MessagesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesListController.swift; sourceTree = "<group>"; };
+		D4B706FF24052DA30019BE72 /* MessageDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailsController.swift; sourceTree = "<group>"; };
+		D4B7070224052DFF0019BE72 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,13 +60,32 @@
 			isa = PBXGroup;
 			children = (
 				D4B706EC24051F440019BE72 /* AppDelegate.swift */,
-				D4B706EE24051F440019BE72 /* ViewController.swift */,
+				D4B7070124052DEE0019BE72 /* Cells */,
+				D4B706FC24052D410019BE72 /* ViewControllers */,
 				D4B706F024051F460019BE72 /* Assets.xcassets */,
 				D4B706F224051F460019BE72 /* Main.storyboard */,
 				D4B706F524051F460019BE72 /* Info.plist */,
 				D4B706F624051F460019BE72 /* Messages.entitlements */,
 			);
 			path = Messages;
+			sourceTree = "<group>";
+		};
+		D4B706FC24052D410019BE72 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4B706EE24051F440019BE72 /* MainViewController.swift */,
+				D4B706FD24052D620019BE72 /* MessagesListController.swift */,
+				D4B706FF24052DA30019BE72 /* MessageDetailsController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D4B7070124052DEE0019BE72 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D4B7070224052DFF0019BE72 /* MessageCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,7 +158,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4B706EF24051F440019BE72 /* ViewController.swift in Sources */,
+				D4B7070024052DA30019BE72 /* MessageDetailsController.swift in Sources */,
+				D4B7070324052DFF0019BE72 /* MessageCell.swift in Sources */,
+				D4B706FE24052D620019BE72 /* MessagesListController.swift in Sources */,
+				D4B706EF24051F440019BE72 /* MainViewController.swift in Sources */,
 				D4B706ED24051F440019BE72 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

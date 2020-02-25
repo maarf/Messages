@@ -701,10 +701,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="suz-CW-dkF">
             <objects>
-                <splitViewController id="qqG-QB-waJ" sceneMemberID="viewController">
+                <splitViewController id="qqG-QB-waJ" customClass="MainViewController" customModule="Messages" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem holdingPriority="255" behavior="contentList" id="od6-4X-cqf"/>
                         <splitViewItem id="VJz-rB-rzH"/>
@@ -726,10 +726,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="1031"/>
         </scene>
-        <!--View Controller-->
+        <!--Messages List Controller-->
         <scene sceneID="Fw3-B7-bQX">
             <objects>
-                <viewController id="Erl-BC-1D9" sceneMemberID="viewController">
+                <viewController id="Erl-BC-1D9" customClass="MessagesListController" customModule="Messages" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="qCT-N5-J9J">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -753,7 +753,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="573"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="X8E-1m-LD9">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="X8E-1m-LD9">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="573"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="0.0" height="2"/>
@@ -773,7 +773,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="MessageCell" id="zQG-eE-brX">
+                                                        <tableCellView identifier="MessageCell" id="zQG-eE-brX" customClass="MessageCell" customModule="Messages" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="1" width="240" height="52"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -867,10 +867,10 @@
             </objects>
             <point key="canvasLocation" x="-205" y="1821"/>
         </scene>
-        <!--View Controller-->
+        <!--Message Details Controller-->
         <scene sceneID="rnf-eb-PY6">
             <objects>
-                <viewController id="amF-sg-Ltr" sceneMemberID="viewController">
+                <viewController id="amF-sg-Ltr" customClass="MessageDetailsController" customModule="Messages" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="8Dh-Uc-XRX">
                         <rect key="frame" x="0.0" y="0.0" width="560" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
