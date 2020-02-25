@@ -31,6 +31,7 @@ final class MainViewController: NSSplitViewController {
     self.messagesList = messagesList
     self.messageDetails = messageDetails
 
+    self.messagesList.delegate = self
     self.messagesList.messages = testMessages
   }
 
@@ -50,8 +51,16 @@ final class MainViewController: NSSplitViewController {
       senderEmail: "amy@example.com",
       recipientName: "Johnny",
       recipientEmail: "johnyy@example.com",
-      receivedAt: Date(timeIntervalSince1970: 1582618880),
+      receivedAt: Date(timeIntervalSince1970: 1582558880),
       subject: "Older test message",
       body: "Older message body")
   ]
+}
+
+// MARK: - Messages list controller delegate
+
+extension MainViewController: MessagesListControllerDelegate {
+  func didChangeSelection(message: Message?) {
+    messageDetails.message = message
+  }
 }

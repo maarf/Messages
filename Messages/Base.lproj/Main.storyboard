@@ -881,14 +881,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="560" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMm-2s-66L">
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMm-2s-66L">
                                 <rect key="frame" x="0.0" y="0.0" width="560" height="600"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <clipView key="contentView" ambiguous="YES" id="92i-Bo-gog">
+                                <clipView key="contentView" id="92i-Bo-gog">
                                     <rect key="frame" x="0.0" y="0.0" width="560" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view ambiguous="YES" id="F2z-87-jAf">
+                                        <view id="F2z-87-jAf">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="600"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -932,7 +931,7 @@
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="vGz-bh-ISx">
+                                                <customView verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="vGz-bh-ISx" customClass="NSTextView">
                                                     <rect key="frame" x="20" y="20" width="520" height="476"/>
                                                 </customView>
                                             </subviews>
@@ -968,7 +967,21 @@
                                 </scroller>
                             </scrollView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="jMm-2s-66L" firstAttribute="top" secondItem="8Dh-Uc-XRX" secondAttribute="top" id="GLp-7z-ayl"/>
+                            <constraint firstItem="jMm-2s-66L" firstAttribute="leading" secondItem="8Dh-Uc-XRX" secondAttribute="leading" id="gqG-Qg-a8a"/>
+                            <constraint firstAttribute="bottom" secondItem="jMm-2s-66L" secondAttribute="bottom" id="iMC-lC-18B"/>
+                            <constraint firstAttribute="trailing" secondItem="jMm-2s-66L" secondAttribute="trailing" id="mky-Pv-9Qi"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="avatar" destination="bLB-dK-gK8" id="Tny-MH-NpC"/>
+                        <outlet property="dateLabel" destination="ZVK-qL-9O9" id="ylI-dl-OTY"/>
+                        <outlet property="recipientNameLabel" destination="HAH-20-ml8" id="Y1x-Pq-JWN"/>
+                        <outlet property="senderNameLabel" destination="F2d-9C-eHw" id="dhw-we-g35"/>
+                        <outlet property="subjectLabel" destination="I1k-BP-FR2" id="UHG-5v-HZ9"/>
+                        <outlet property="textView" destination="vGz-bh-ISx" id="jY0-ii-wJ9"/>
+                    </connections>
                 </viewController>
                 <customObject id="LCS-T5-vcZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

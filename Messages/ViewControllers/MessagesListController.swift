@@ -11,6 +11,8 @@ import Model
 
 final class MessagesListController: NSViewController {
 
+  weak var delegate: MessagesListControllerDelegate?
+
   // MARL: - Lifecycle
 
   override func viewDidLoad() {
@@ -27,6 +29,12 @@ final class MessagesListController: NSViewController {
 
   var messages = [Message]()
 
+}
+
+// MARK: - Delegate protocol
+
+protocol MessagesListControllerDelegate: class {
+  func didChangeSelection(message: Message?)
 }
 
 // MARK: - Table view delegate and data source
@@ -50,5 +58,12 @@ extension MessagesListController: NSTableViewDelegate {
       ?? MessageCell()
     messageCell.message = messages[row]
     return messageCell
+  }
+
+  func tableViewSelectionDidChange(_ notification: Notification) {
+    let selectedMessage = tableView.selectedRow >= 0
+      ? messages[tableView.selectedRow]
+      : nil
+    delegate?.didChangeSelection(message: selectedMessage)
   }
 }
