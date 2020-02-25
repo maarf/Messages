@@ -7,8 +7,13 @@
 //
 
 import AppKit
+import Model
 
 final class MessagesListController: NSViewController {
-  
+
+  // MARK: - State
+
+  var messages = [Message]()
+
 }
 

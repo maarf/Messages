@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Model
 
 final class MainViewController: NSSplitViewController {
 
@@ -29,5 +30,28 @@ final class MainViewController: NSSplitViewController {
     }
     self.messagesList = messagesList
     self.messageDetails = messageDetails
+
+    self.messagesList.messages = testMessages
   }
+
+  // MARK: Testing
+
+  private lazy var testMessages = [
+    Message(
+      senderName: "Chad",
+      senderEmail: "chad@example.com",
+      recipientName: "Johnny",
+      recipientEmail: "johnyy@example.com",
+      receivedAt: Date(timeIntervalSince1970: 1582628880),
+      subject: "Test message",
+      body: "Message body"),
+    Message(
+      senderName: "Amy",
+      senderEmail: "amy@example.com",
+      recipientName: "Johnny",
+      recipientEmail: "johnyy@example.com",
+      receivedAt: Date(timeIntervalSince1970: 1582618880),
+      subject: "Older test message",
+      body: "Older message body")
+  ]
 }
