@@ -706,7 +706,7 @@
             <objects>
                 <splitViewController id="qqG-QB-waJ" customClass="MainViewController" customModule="Messages" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem holdingPriority="255" behavior="contentList" id="od6-4X-cqf"/>
+                        <splitViewItem holdingPriority="260" behavior="sidebar" id="od6-4X-cqf"/>
                         <splitViewItem id="VJz-rB-rzH"/>
                     </splitViewItems>
                     <splitView key="splitView" autosaveName="MessagesSplitView" dividerStyle="thin" vertical="YES" id="bV5-WQ-20J">
@@ -734,6 +734,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="240" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <visualEffectView fixedFrame="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="v2O-Ni-ia3">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="600"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </visualEffectView>
                             <popUpButton horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fA1-dO-m4C">
                                 <rect key="frame" x="0.0" y="576" width="103" height="20"/>
                                 <popUpButtonCell key="cell" type="bevel" title="Sort by Date" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" arrowPosition="arrowAtCenter" selectedItem="vy8-B4-UNc" id="ZLa-4J-peU">
@@ -760,7 +764,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="573"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="0.0" height="2"/>
-                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn editable="NO" width="240" minWidth="40" maxWidth="1000" id="bdQ-jt-MvR">
