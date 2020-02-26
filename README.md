@@ -2,6 +2,8 @@
 
 A test programming task for the fine folks at Fournova.
 
+This is a macOS X app and should build nicely on Xcode 11 using Swift 5.
+
 ## Notes
 
 ### Storyboards
