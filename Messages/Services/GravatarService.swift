@@ -44,7 +44,7 @@ final class GravatarService {
       updateHandler(NSImage(named: "DefaultAvatar")!)
     }
     var components = URLComponents(string: hashedEmail)!
-    components.queryItems = [URLQueryItem(name: "d", value: "identicon")]
+    components.queryItems = [URLQueryItem(name: "d", value: "404")]
     let url = components.url(relativeTo: Self.gravatarBaseURL)!
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
       guard

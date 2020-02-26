@@ -65,7 +65,7 @@ final class MainViewController: NSSplitViewController {
       body: "Older message body"),
     Message(
       senderName: "Bertrand",
-      senderEmail: "bertrand@example.com",
+      senderEmail: "maarfijs@gmail.com",
       recipientName: "Johnny",
       recipientEmail: "johnyy@example.com",
       receivedAt: Date(timeIntervalSince1970: 1582238880),
