@@ -25,6 +25,8 @@ final class MessageDetailsController: NSViewController {
 
   // MARK: - State
 
+  private var gravatarService: GravatarService?
+
   var message: Message? {
     didSet {
       guard let message = message else {
@@ -40,6 +42,15 @@ final class MessageDetailsController: NSViewController {
       subjectLabel.stringValue = message.subject
       dateLabel.stringValue = dateFormatter.string(from: message.receivedAt)
       bodyLabel.stringValue = message.body
+
+      gravatarService = GravatarService()
+      gravatarService?.fetchAvatar(
+        forEmail: message.senderEmail,
+        updateHandler: { [weak self] image in
+          DispatchQueue.main.async {
+            self?.avatar.image = image
+          }
+        })
 
       setReadMessageTimer()
     }

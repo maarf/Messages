@@ -817,18 +817,18 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wdn-l7-ETF">
-                                                                    <rect key="frame" x="8" y="4" width="44" height="44"/>
+                                                                    <rect key="frame" x="12" y="6" width="40" height="40"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="44" id="CZ9-PE-hod"/>
-                                                                        <constraint firstAttribute="height" constant="44" id="tIT-sl-4mq"/>
+                                                                        <constraint firstAttribute="width" constant="40" id="CZ9-PE-hod"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="tIT-sl-4mq"/>
                                                                     </constraints>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="a49-B0-0Xb"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="hGp-hL-S3c" secondAttribute="trailing" constant="8" id="6iT-Zh-JqL"/>
-                                                                <constraint firstItem="Wdn-l7-ETF" firstAttribute="top" secondItem="zQG-eE-brX" secondAttribute="top" constant="4" id="HZv-eh-jwj"/>
-                                                                <constraint firstItem="Wdn-l7-ETF" firstAttribute="leading" secondItem="zQG-eE-brX" secondAttribute="leading" constant="8" id="MyE-RM-GqM"/>
+                                                                <constraint firstItem="Wdn-l7-ETF" firstAttribute="top" secondItem="zQG-eE-brX" secondAttribute="top" constant="6" id="HZv-eh-jwj"/>
+                                                                <constraint firstItem="Wdn-l7-ETF" firstAttribute="leading" secondItem="zQG-eE-brX" secondAttribute="leading" constant="12" id="MyE-RM-GqM"/>
                                                                 <constraint firstItem="QNa-nD-SJ6" firstAttribute="top" secondItem="PBi-cT-m45" secondAttribute="bottom" constant="5" id="VAt-8k-WAd"/>
                                                                 <constraint firstItem="PBi-cT-m45" firstAttribute="top" secondItem="zQG-eE-brX" secondAttribute="top" constant="5" id="ZZe-vm-nua"/>
                                                                 <constraint firstItem="PBi-cT-m45" firstAttribute="leading" secondItem="Wdn-l7-ETF" secondAttribute="trailing" constant="8" id="aoR-tl-QrN"/>
