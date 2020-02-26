@@ -16,13 +16,22 @@ final class MessageDetailsController: NSViewController {
   override func viewDidLoad() {
     // Constrain scroll view and its document view widths to equal
     documentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+
+    scrollView.isHidden = true
   }
 
   // MARK: - State
 
   var message: Message? {
     didSet {
-      guard let message = message else { return }
+      guard let message = message else {
+        scrollView.isHidden = true
+        emptyStateLabel.isHidden = false
+        return
+      }
+      scrollView.isHidden = false
+      emptyStateLabel.isHidden = true
+      
       senderNameLabel.stringValue = "\(message.senderName) <\(message.senderEmail)>"
       recipientNameLabel.stringValue = "\(message.recipientName) <\(message.recipientEmail)>"
       subjectLabel.stringValue = message.subject
@@ -41,6 +50,7 @@ final class MessageDetailsController: NSViewController {
   @IBOutlet var dateLabel: NSTextField!
   @IBOutlet var avatar: NSImageView!
   @IBOutlet var bodyLabel: NSTextField!
+  @IBOutlet var emptyStateLabel: NSTextField!
 }
 
 private let dateFormatter: DateFormatter = {

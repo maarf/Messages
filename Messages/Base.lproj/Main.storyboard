@@ -885,6 +885,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="560" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qiM-aW-ipc">
+                                <rect key="frame" x="212" y="292" width="136" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="No Message Selected" id="csA-MF-TtC">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <scrollView verticalCompressionResistancePriority="250" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMm-2s-66L">
                                 <rect key="frame" x="0.0" y="0.0" width="560" height="600"/>
                                 <clipView key="contentView" id="92i-Bo-gog">
@@ -977,6 +985,8 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="jMm-2s-66L" firstAttribute="top" secondItem="8Dh-Uc-XRX" secondAttribute="top" id="GLp-7z-ayl"/>
+                            <constraint firstItem="qiM-aW-ipc" firstAttribute="centerY" secondItem="8Dh-Uc-XRX" secondAttribute="centerY" id="RlW-fI-7CS"/>
+                            <constraint firstItem="qiM-aW-ipc" firstAttribute="centerX" secondItem="8Dh-Uc-XRX" secondAttribute="centerX" id="fpt-d3-I3k"/>
                             <constraint firstItem="jMm-2s-66L" firstAttribute="leading" secondItem="8Dh-Uc-XRX" secondAttribute="leading" id="gqG-Qg-a8a"/>
                             <constraint firstAttribute="bottom" secondItem="jMm-2s-66L" secondAttribute="bottom" id="iMC-lC-18B"/>
                             <constraint firstAttribute="trailing" secondItem="jMm-2s-66L" secondAttribute="trailing" id="mky-Pv-9Qi"/>
@@ -987,6 +997,7 @@
                         <outlet property="bodyLabel" destination="oVP-gb-FU1" id="K4e-X6-hBE"/>
                         <outlet property="dateLabel" destination="ZVK-qL-9O9" id="ylI-dl-OTY"/>
                         <outlet property="documentView" destination="F2z-87-jAf" id="XL6-hc-4ku"/>
+                        <outlet property="emptyStateLabel" destination="qiM-aW-ipc" id="wAI-WE-Y51"/>
                         <outlet property="recipientNameLabel" destination="HAH-20-ml8" id="Y1x-Pq-JWN"/>
                         <outlet property="scrollView" destination="jMm-2s-66L" id="vwN-W2-vUP"/>
                         <outlet property="senderNameLabel" destination="F2d-9C-eHw" id="dhw-we-g35"/>

@@ -82,6 +82,7 @@ extension MainViewController: MessagesListControllerDelegate {
 
   func didChangeSortOrder(_ sortOrder: SortOrder) {
     messagesList.messages = testMessages.sorted(by: sortOrder)
+    messageDetails.message = nil
   }
 }
 
