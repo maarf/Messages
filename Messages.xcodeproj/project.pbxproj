@@ -18,6 +18,7 @@
 		D4B70713240533A10019BE72 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B7070C240533A10019BE72 /* Model.framework */; };
 		D4B70714240533A10019BE72 /* Model.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4B7070C240533A10019BE72 /* Model.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D4B7071A240533B00019BE72 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B70719240533B00019BE72 /* Message.swift */; };
+		D4B7071D240685DE0019BE72 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B7071C240685DE0019BE72 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D4B7070E240533A10019BE72 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		D4B7070F240533A10019BE72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4B70719240533B00019BE72 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		D4B7071C240685DE0019BE72 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				D4B706EC24051F440019BE72 /* AppDelegate.swift */,
 				D4B7070124052DEE0019BE72 /* Cells */,
+				D4B7071B240685CB0019BE72 /* State */,
 				D4B706FC24052D410019BE72 /* ViewControllers */,
 				D4B706F024051F460019BE72 /* Assets.xcassets */,
 				D4B706F224051F460019BE72 /* Main.storyboard */,
@@ -138,6 +141,14 @@
 				D4B7070F240533A10019BE72 /* Info.plist */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D4B7071B240685CB0019BE72 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				D4B7071C240685DE0019BE72 /* AppState.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +267,7 @@
 				D4B7070024052DA30019BE72 /* MessageDetailsController.swift in Sources */,
 				D4B7070324052DFF0019BE72 /* MessageCell.swift in Sources */,
 				D4B706FE24052D620019BE72 /* MessagesListController.swift in Sources */,
+				D4B7071D240685DE0019BE72 /* AppState.swift in Sources */,
 				D4B706EF24051F440019BE72 /* MainViewController.swift in Sources */,
 				D4B706ED24051F440019BE72 /* AppDelegate.swift in Sources */,
 			);

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Martins Spilners. All rights reserved.
 //
 
-public struct Message {
+public struct Message: Equatable {
 
   public let senderName: String
   public let senderEmail: String
@@ -15,7 +15,7 @@ public struct Message {
   public let receivedAt: Date
   public let subject: String
   public let body: String
-  public let isRead: Bool
+  public var isRead: Bool
 
   public init(
     senderName: String,

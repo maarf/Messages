@@ -11,6 +11,8 @@ import Model
 
 final class MessageDetailsController: NSViewController {
 
+  weak var delegate: MessageDetailsControllerDelegate?
+
   // MARK: - Lifecycle
 
   override func viewDidLoad() {
@@ -38,7 +40,28 @@ final class MessageDetailsController: NSViewController {
       subjectLabel.stringValue = message.subject
       dateLabel.stringValue = dateFormatter.string(from: message.receivedAt)
       bodyLabel.stringValue = message.body
+
+      setReadMessageTimer()
     }
+  }
+
+  // MARK: - Read timer
+
+  var readMessageTimer: Timer?
+
+  func setReadMessageTimer() {
+    // Reset the previous timer
+    readMessageTimer?.invalidate()
+    readMessageTimer = nil
+
+    guard let message = message, message.isRead == false else { return }
+    readMessageTimer = Timer.scheduledTimer(
+      withTimeInterval: 3,
+      repeats: false,
+      block: { [weak self] _ in
+        self?.delegate?.didReadMessage(message)
+        self?.readMessageTimer = nil
+      })
   }
 
   // MARK: - Subviews
@@ -53,6 +76,14 @@ final class MessageDetailsController: NSViewController {
   @IBOutlet var bodyLabel: NSTextField!
   @IBOutlet var emptyStateLabel: NSTextField!
 }
+
+// MARK: - Delegate protocol
+
+protocol MessageDetailsControllerDelegate: class {
+  func didReadMessage(_ message: Message)
+}
+
+// MARK: - Helpers
 
 private let dateFormatter: DateFormatter = {
   let formatter = DateFormatter()

@@ -28,11 +28,7 @@ final class MessagesListController: NSViewController {
 
   // MARK: - State
 
-  var messages = [Message]() {
-    didSet {
-      tableView.reloadData()
-    }
-  }
+  var messages = [Message]()
 
   var sortOrder: SortOrder {
     get {
@@ -49,6 +45,20 @@ final class MessagesListController: NSViewController {
   @IBAction func selectedSortOrder(_ sender: Any?) {
     delegate?.didChangeSortOrder(sortOrder)
   }
+
+  func reloadMessages() {
+    tableView.reloadData()
+  }
+
+  func updateMessage(at index: Int) {
+    guard
+      let visibleCell = tableView.view(
+        atColumn: 0,
+        row: index,
+        makeIfNecessary: false) as? MessageCell
+    else { return }
+    visibleCell.message = messages[index]
+  }
 }
 
 // MARK: - Delegate protocol
@@ -56,12 +66,6 @@ final class MessagesListController: NSViewController {
 protocol MessagesListControllerDelegate: class {
   func didChangeSelection(message: Message?)
   func didChangeSortOrder(_ sortOrder: SortOrder)
-}
-
-// MARK: - Auxilary types
-
-enum SortOrder {
-  case date, senderName
 }
 
 // MARK: - Table view delegate and data source

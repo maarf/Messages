@@ -14,11 +14,19 @@ final class MessageCell: NSTableCellView {
   override init(frame: NSRect) {
     super.init(frame: frame)
     identifier = Self.defaultIdentifier
+    wantsLayer = true
   }
 
   required init?(coder: NSCoder) {
     super.init(coder: coder)
     identifier = Self.defaultIdentifier
+    wantsLayer = true
+  }
+
+  override func updateLayer() {
+     layer?.backgroundColor = message?.isRead == false
+       ? NSColor(named: "UnreadMessageBackground")!.cgColor
+       : NSColor.clear.cgColor
   }
 
   // MARK: - State
@@ -29,6 +37,7 @@ final class MessageCell: NSTableCellView {
       senderNameLabel.stringValue = message.senderName
       subjectLabel.stringValue = message.subject
       dateLabel.stringValue = dateFormatter.string(from: message.receivedAt)
+      updateLayer()
     }
   }
 

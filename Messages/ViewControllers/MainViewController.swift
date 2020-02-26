@@ -29,11 +29,20 @@ final class MainViewController: NSSplitViewController {
       fatalError("Can't find message list and details controllers")
     }
     self.messagesList = messagesList
-    self.messageDetails = messageDetails
-
     self.messagesList.delegate = self
-    self.messagesList.messages = testMessages.sorted(by: .date)
+    self.messageDetails = messageDetails
+    self.messageDetails.delegate = self
+
+    // Populate app state with test messages
+    appState.messages = testMessages.sorted(by: appState.sortOrder)
+
+    self.messagesList.messages = appState.messages
   }
+
+  // MARK: State
+
+  /// A very simple implementation of app's state.
+  private var appState = AppState()
 
   // MARK: Testing
 
@@ -81,8 +90,22 @@ extension MainViewController: MessagesListControllerDelegate {
   }
 
   func didChangeSortOrder(_ sortOrder: SortOrder) {
-    messagesList.messages = testMessages.sorted(by: sortOrder)
+    appState.sortOrder = sortOrder
+    appState.messages = appState.messages.sorted(by: sortOrder)
+    messagesList.messages = appState.messages
+    messagesList.reloadMessages()
     messageDetails.message = nil
+  }
+}
+
+// MARK: - Message details controller delegate
+
+extension MainViewController: MessageDetailsControllerDelegate {
+  func didReadMessage(_ message: Message) {
+    guard let index = appState.messages.firstIndex(of: message) else { return }
+    appState.messages[index].isRead = true
+    messagesList.messages = appState.messages
+    messagesList.updateMessage(at: index)
   }
 }
 
