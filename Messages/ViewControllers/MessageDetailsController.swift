@@ -23,8 +23,8 @@ final class MessageDetailsController: NSViewController {
   var message: Message? {
     didSet {
       guard let message = message else { return }
-      senderNameLabel.stringValue = message.senderName
-      recipientNameLabel.stringValue = message.recipientName
+      senderNameLabel.stringValue = "\(message.senderName) <\(message.senderEmail)>"
+      recipientNameLabel.stringValue = "\(message.recipientName) <\(message.recipientEmail)>"
       subjectLabel.stringValue = message.subject
       dateLabel.stringValue = dateFormatter.string(from: message.receivedAt)
       bodyLabel.stringValue = message.body
