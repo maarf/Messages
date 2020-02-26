@@ -32,10 +32,14 @@ final class GravatarService {
     forEmail email: String,
     updateHandler: @escaping (NSImage) -> Void
   ) {
+    // Cancel previous data task if there is any
+    dataTask?.cancel()
+
     let hashedEmail = email
       .trimmingCharacters(in: .whitespacesAndNewlines)
       .lowercased()
       .md5Hashed()
+
     // Check cache for already fetched avatars
     if let cachedImage = Self.cache.object(forKey: hashedEmail as NSString) {
       updateHandler(cachedImage)
@@ -43,6 +47,7 @@ final class GravatarService {
     } else {
       updateHandler(NSImage(named: "DefaultAvatar")!)
     }
+    
     var components = URLComponents(string: hashedEmail)!
     components.queryItems = [URLQueryItem(name: "d", value: "404")]
     let url = components.url(relativeTo: Self.gravatarBaseURL)!
@@ -62,6 +67,10 @@ final class GravatarService {
     }
     task.resume()
     dataTask = task
+  }
+
+  func cancelDataTask() {
+    dataTask?.cancel()
   }
 }
 

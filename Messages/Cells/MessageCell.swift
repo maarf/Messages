@@ -31,19 +31,18 @@ final class MessageCell: NSTableCellView {
 
   // MARK: - State
 
-  private var gravatarService: GravatarService?
+  private lazy var gravatarService = GravatarService()
 
   var message: Message? {
     didSet {
       guard let message = message else {
-        gravatarService = nil
+        gravatarService.cancelDataTask()
         return
       }
       senderNameLabel.stringValue = message.senderName
       subjectLabel.stringValue = message.subject
       dateLabel.stringValue = dateFormatter.string(from: message.receivedAt)
-      gravatarService = GravatarService()
-      gravatarService?.fetchAvatar(
+      gravatarService.fetchAvatar(
         forEmail: message.senderEmail,
         updateHandler: { [weak self] image in
           DispatchQueue.main.async {

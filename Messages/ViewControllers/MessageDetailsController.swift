@@ -13,6 +13,8 @@ final class MessageDetailsController: NSViewController {
 
   weak var delegate: MessageDetailsControllerDelegate?
 
+  private lazy var gravatarService = GravatarService()
+
   // MARK: - Lifecycle
 
   override func viewDidLoad() {
@@ -25,13 +27,12 @@ final class MessageDetailsController: NSViewController {
 
   // MARK: - State
 
-  private var gravatarService: GravatarService?
-
   var message: Message? {
     didSet {
       guard let message = message else {
         documentView.isHidden = true
         emptyStateLabel.isHidden = false
+        gravatarService.cancelDataTask()
         return
       }
       documentView.isHidden = false
@@ -43,8 +44,7 @@ final class MessageDetailsController: NSViewController {
       dateLabel.stringValue = dateFormatter.string(from: message.receivedAt)
       bodyLabel.stringValue = message.body
 
-      gravatarService = GravatarService()
-      gravatarService?.fetchAvatar(
+      gravatarService.fetchAvatar(
         forEmail: message.senderEmail,
         updateHandler: { [weak self] image in
           DispatchQueue.main.async {
@@ -58,9 +58,9 @@ final class MessageDetailsController: NSViewController {
 
   // MARK: - Read timer
 
-  var readMessageTimer: Timer?
+  private var readMessageTimer: Timer?
 
-  func setReadMessageTimer() {
+  private func setReadMessageTimer() {
     // Reset the previous timer
     readMessageTimer?.invalidate()
     readMessageTimer = nil
