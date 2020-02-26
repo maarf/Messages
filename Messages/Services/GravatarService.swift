@@ -11,8 +11,13 @@ import CommonCrypto
 
 final class GravatarService {
 
-  static let gravatarBaseURL = URL(string: "https://www.gravatar.com/avatar/")
+  private static let gravatarBaseURL = URL(string: "https://www.gravatar.com/avatar/")
 
+  /// A memory cache for fetched avatars.
+  ///
+  /// Used to display an avatar instantly without any jitter if it was
+  /// previously fetched from Gravatar or loaded from URLSession cache.
+  private static let cache = NSCache<NSString, NSImage>()
   private var dataTask: URLSessionDataTask?
 
   deinit {
@@ -27,11 +32,17 @@ final class GravatarService {
     forEmail email: String,
     updateHandler: @escaping (NSImage) -> Void
   ) {
-    updateHandler(NSImage(named: "DefaultAvatar")!)
     let hashedEmail = email
       .trimmingCharacters(in: .whitespacesAndNewlines)
       .lowercased()
       .md5Hashed()
+    // Check cache for already fetched avatars
+    if let cachedImage = Self.cache.object(forKey: hashedEmail as NSString) {
+      updateHandler(cachedImage)
+      return
+    } else {
+      updateHandler(NSImage(named: "DefaultAvatar")!)
+    }
     var components = URLComponents(string: hashedEmail)!
     components.queryItems = [URLQueryItem(name: "d", value: "identicon")]
     let url = components.url(relativeTo: Self.gravatarBaseURL)!
@@ -47,6 +58,7 @@ final class GravatarService {
         return
       }
       updateHandler(image)
+      Self.cache.setObject(image, forKey: hashedEmail as NSString)
     }
     task.resume()
     dataTask = task
