@@ -706,7 +706,7 @@
             <objects>
                 <splitViewController id="qqG-QB-waJ" customClass="MainViewController" customModule="Messages" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem holdingPriority="260" behavior="sidebar" id="od6-4X-cqf"/>
+                        <splitViewItem canCollapse="YES" holdingPriority="260" behavior="sidebar" id="od6-4X-cqf"/>
                         <splitViewItem id="VJz-rB-rzH"/>
                     </splitViewItems>
                     <splitView key="splitView" autosaveName="MessagesSplitView" dividerStyle="thin" vertical="YES" id="bV5-WQ-20J">
@@ -742,7 +742,7 @@
                                 <rect key="frame" x="0.0" y="576" width="103" height="20"/>
                                 <popUpButtonCell key="cell" type="bevel" title="Sort by Date" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" arrowPosition="arrowAtCenter" selectedItem="vy8-B4-UNc" id="ZLa-4J-peU">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="nRZ-1T-rqI">
                                         <items>
                                             <menuItem title="Sort by Date" state="on" id="vy8-B4-UNc"/>
@@ -897,48 +897,48 @@
                                         <view ambiguous="YES" verifyAmbiguity="off" translatesAutoresizingMaskIntoConstraints="NO" id="F2z-87-jAf" customClass="FlippedView" customModule="Messages" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="140"/>
                                             <subviews>
-                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" verifyAmbiguity="off" translatesAutoresizingMaskIntoConstraints="NO" id="F2d-9C-eHw">
-                                                    <rect key="frame" x="18" y="104" width="427" height="16"/>
+                                                <textField horizontalHuggingPriority="200" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verifyAmbiguity="off" translatesAutoresizingMaskIntoConstraints="NO" id="F2d-9C-eHw">
+                                                    <rect key="frame" x="18" y="104" width="167" height="16"/>
                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" title="Sender Name" id="vmX-IG-C49">
                                                         <font key="font" metaFont="systemMedium" size="13"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" verifyAmbiguity="off" translatesAutoresizingMaskIntoConstraints="NO" id="HAH-20-ml8">
-                                                    <rect key="frame" x="18" y="80" width="464" height="16"/>
+                                                <textField horizontalHuggingPriority="200" verticalHuggingPriority="750" horizontalCompressionResistancePriority="200" verifyAmbiguity="off" translatesAutoresizingMaskIntoConstraints="NO" id="HAH-20-ml8">
+                                                    <rect key="frame" x="18" y="80" width="204" height="16"/>
                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" title="Recipinet Name" id="RDT-9g-jSh">
                                                         <font key="font" usesAppearanceFont="YES"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" verifyAmbiguity="off" translatesAutoresizingMaskIntoConstraints="NO" id="I1k-BP-FR2">
-                                                    <rect key="frame" x="18" y="56" width="464" height="16"/>
+                                                <textField horizontalHuggingPriority="200" verticalHuggingPriority="750" horizontalCompressionResistancePriority="200" verifyAmbiguity="off" translatesAutoresizingMaskIntoConstraints="NO" id="I1k-BP-FR2">
+                                                    <rect key="frame" x="18" y="56" width="204" height="16"/>
                                                     <textFieldCell key="cell" selectable="YES" title="Subject" id="tVV-xG-bBS">
                                                         <font key="font" usesAppearanceFont="YES"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" verifyAmbiguity="off" translatesAutoresizingMaskIntoConstraints="NO" id="bLB-dK-gK8">
-                                                    <rect key="frame" x="488" y="68" width="52" height="52"/>
+                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" verifyAmbiguity="off" translatesAutoresizingMaskIntoConstraints="NO" id="bLB-dK-gK8">
+                                                    <rect key="frame" x="228" y="68" width="52" height="52"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="52" id="DrG-hA-2p9"/>
                                                         <constraint firstAttribute="height" constant="52" id="ihy-f3-oPt"/>
                                                     </constraints>
                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="0pG-8Y-2Oo"/>
                                                 </imageView>
-                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" verifyAmbiguity="off" translatesAutoresizingMaskIntoConstraints="NO" id="oVP-gb-FU1">
-                                                    <rect key="frame" x="18" y="20" width="524" height="16"/>
+                                                <textField horizontalHuggingPriority="200" verticalHuggingPriority="750" horizontalCompressionResistancePriority="200" verifyAmbiguity="off" translatesAutoresizingMaskIntoConstraints="NO" id="oVP-gb-FU1">
+                                                    <rect key="frame" x="18" y="20" width="264" height="16"/>
                                                     <textFieldCell key="cell" selectable="YES" title="Body" id="bZh-gf-aoF">
                                                         <font key="font" usesAppearanceFont="YES"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVK-qL-9O9">
-                                                    <rect key="frame" x="449" y="104" width="33" height="16"/>
+                                                <textField horizontalHuggingPriority="210" verticalHuggingPriority="750" horizontalCompressionResistancePriority="210" translatesAutoresizingMaskIntoConstraints="NO" id="ZVK-qL-9O9">
+                                                    <rect key="frame" x="189" y="104" width="33" height="16"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" alignment="right" title="Date" id="0j2-qL-pGA">
                                                         <font key="font" usesAppearanceFont="YES"/>
                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -952,6 +952,7 @@
                                                 <constraint firstItem="HAH-20-ml8" firstAttribute="top" secondItem="F2d-9C-eHw" secondAttribute="bottom" constant="8" id="9Vw-3l-rza"/>
                                                 <constraint firstItem="oVP-gb-FU1" firstAttribute="leading" secondItem="F2z-87-jAf" secondAttribute="leading" constant="20" id="Dw2-PK-OAq"/>
                                                 <constraint firstItem="ZVK-qL-9O9" firstAttribute="top" secondItem="F2z-87-jAf" secondAttribute="top" constant="20" id="FDZ-Dc-sP7"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="KzQ-GQ-pPM"/>
                                                 <constraint firstItem="F2d-9C-eHw" firstAttribute="top" secondItem="F2z-87-jAf" secondAttribute="top" constant="20" id="PYZ-1l-JP9"/>
                                                 <constraint firstItem="bLB-dK-gK8" firstAttribute="leading" secondItem="I1k-BP-FR2" secondAttribute="trailing" constant="8" id="Q6j-tH-Va0"/>
                                                 <constraint firstItem="F2d-9C-eHw" firstAttribute="leading" secondItem="F2z-87-jAf" secondAttribute="leading" constant="20" id="VIZ-Kx-sgz"/>
