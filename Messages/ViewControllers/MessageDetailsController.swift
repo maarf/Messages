@@ -17,7 +17,8 @@ final class MessageDetailsController: NSViewController {
     // Constrain scroll view and its document view widths to equal
     documentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
 
-    scrollView.isHidden = true
+    documentView.isHidden = true
+    emptyStateLabel.isHidden = false
   }
 
   // MARK: - State
@@ -25,11 +26,11 @@ final class MessageDetailsController: NSViewController {
   var message: Message? {
     didSet {
       guard let message = message else {
-        scrollView.isHidden = true
+        documentView.isHidden = true
         emptyStateLabel.isHidden = false
         return
       }
-      scrollView.isHidden = false
+      documentView.isHidden = false
       emptyStateLabel.isHidden = true
       
       senderNameLabel.stringValue = "\(message.senderName) <\(message.senderEmail)>"

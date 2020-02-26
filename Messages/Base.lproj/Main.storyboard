@@ -889,14 +889,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="560" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qiM-aW-ipc">
-                                <rect key="frame" x="212" y="292" width="136" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="No Message Selected" id="csA-MF-TtC">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <scrollView verticalCompressionResistancePriority="250" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMm-2s-66L">
                                 <rect key="frame" x="0.0" y="0.0" width="560" height="600"/>
                                 <clipView key="contentView" id="92i-Bo-gog">
@@ -986,6 +978,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qiM-aW-ipc">
+                                <rect key="frame" x="212" y="292" width="136" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="No Message Selected" id="csA-MF-TtC">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="jMm-2s-66L" firstAttribute="top" secondItem="8Dh-Uc-XRX" secondAttribute="top" id="GLp-7z-ayl"/>
